@@ -32,6 +32,11 @@
                         <span class='glyphicon glyphicon-off'></span> Login
                     </a>
                 </li>
+                <li [routerLinkActive]='["register"]'>
+                    <a [routerLink]='["/register"]' (click)='collapse()'>
+                        <span class='glyphicon glyphicon-user'></span> Register
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
