@@ -5,50 +5,49 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNetCore.Mvc;
-using MvcMusicStore.Models;
+using PhotoScape.Models;
 
 
-namespace MvcMusicStore.Controllers
+namespace PhotoScape.Controllers
 {
     public class StoreController : Controller
     {
         // GET: /Store/
-        public IActionResult Index()
+        public ActionResult Index()
         {
+            var categories = new List<Category>
+            {
+                new Category { Name = "Abstract"},
+                new Category { Name = "Animals"},
+                new Category { Name = "Nature"}
+
+            };
+
             //Contract.Ensures(Contract.Result<IActionResult>() != null);
-            ViewData["Message"] = "Hello from Store.Index()";
-            return View();
+            return View(categories);
 
         }
+         //GET: /Store/Browse
 
-        /* GET: /Store/Browse
-        //public ActionResult Browse(string genre)
+        public ActionResult Browse(string category)
         {
 
-            //var genreModel (genreModel);
+            var CategoryModel = new Category { Name = category };
 
-            //return "Hello from Store.Browse()";
+            return View(CategoryModel);
+
         }
-        */
+
 
         // GET: /Store/Details/
 
         public ActionResult Details(int id)
         {
 
-            var album = new Album { Title = "Album " + id };
+            var photo = new Photo { Name = "Photo " + id };
 
-            return View(album);
+            return View(photo);
         }
-
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
 
     }
 }

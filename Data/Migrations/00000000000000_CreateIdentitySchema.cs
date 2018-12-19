@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MvcMusicStore.Data.Migrations
+namespace PhotoScape.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

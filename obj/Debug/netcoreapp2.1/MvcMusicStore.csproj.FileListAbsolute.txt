@@ -34,3 +34,6 @@
 /Users/Chris/Desktop/MvcMusicStore/obj/Debug/netcoreapp2.1/MvcMusicStore.dll
 /Users/Chris/Desktop/MvcMusicStore/obj/Debug/netcoreapp2.1/MvcMusicStore.pdb
 /Users/Chris/Desktop/MvcMusicStore/obj/Debug/netcoreapp2.1/MvcMusicStore.csproj.CopyComplete
+/Users/Chris/Desktop/MvcMusicStore/obj/Debug/netcoreapp2.1/MvcMusicStore.csprojAssemblyReference.cache
+/Users/Chris/Desktop/MvcMusicStore/obj/Debug/netcoreapp2.1/Razor/Views/Store/Index.g.cshtml.cs
+/Users/Chris/Desktop/MvcMusicStore/obj/Debug/netcoreapp2.1/Razor/Views/Store/Browse.g.cshtml.cs
