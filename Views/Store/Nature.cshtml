@@ -1,0 +1,63 @@
+@{
+  Layout = "_Layout";
+}
+
+@{
+  ViewBag.Title = "Nature";
+}
+
+<h3>Nature Gallery</h3>
+
+<div class="container">
+  <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 grid-item">
+          <img src="~/images/6.jpg" alt="img1" />
+          <br />
+          <label for="img1">
+              Author: Alfredo LaPaya | Price: $8.14 |
+              <a asp-controller="Cart" asp-action="Buy" asp-route-id="6">Buy Now!</a>
+          </label>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 grid-item">
+          <img src="~/images/7.jpg" alt="img2" />
+          <br />
+          <label for="img2">
+              Author: Kendrid Murray | Price: $10.80 |
+              <a asp-controller="Cart" asp-action="Buy" asp-route-id="7">Buy Now!</a>
+          </label>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 grid-item">
+          <img src="~/images/8.jpg" alt="img3" />
+          <br />
+          <label for="img3">
+              Author: Chelsie Valero | Price: $5.75 |
+              <a asp-controller="Cart" asp-action="Buy" asp-route-id="8">Buy Now!</a>
+          </label>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 grid-item">
+          <img src="~/images/9.jpg" alt="img4" />
+          <br />
+          <label for="img4">
+              Author: Marcus Capello | Price: $14.48 |
+              <a asp-controller="Cart" asp-action="Buy" asp-route-id="9">Buy Now!</a>
+          </label>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 grid-item">
+          <img src="~/images/10.jpg" alt="img5" />
+          <br />
+          <label for="img5">
+              Author: Gerald Montenero | Price: $6.77 |
+              <a asp-controller="Cart" asp-action="Buy" asp-route-id="10">Buy Now!</a>
+          </label>
+      </div>
+  </div>
+</div>
+<style>
+  div.grid-item {
+    text-align: center;
+    margin-bottom: 11px;
+  }
+  img {
+    margin-bottom: 8px;
+  }
+</style>

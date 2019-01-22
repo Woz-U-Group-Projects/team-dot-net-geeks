@@ -1,0 +1,54 @@
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewBag.Title = "Cart";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cart</title>
+</head>
+<body>
+
+    <h3>Your Shopping Cart</h3>
+    <table cellpadding="10" cellspacing="2" border="1">
+        <tr>
+            <th>Option</th>
+            <th>Id</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in ViewBag.cart)
+        {
+            <tr>
+                <td><a asp-controller="Cart" asp-action="Remove" asp-route-id="@item.Product.Id">Remove</a></td>
+                <td>@item.Product.Id</td>
+                <td>@item.Product.Author</td>
+                <td>@item.Product.Price</td>
+                <td>@item.Quantity</td>
+                <td>@(item.Product.Price * item.Quantity)</td>
+                <td></td>
+            </tr>
+        }
+
+        <tr>
+            <td colspan="6">Sum</td>
+            <td>
+                @ViewBag.total
+            </td>
+        </tr>
+    </table>
+    <br>
+    <a asp-controller="Store" asp-action="Index">Continue Shopping</a> |  
+    <a asp-controller="Cart" asp-action="StripePay">Checkout</a>
+</body>
+</html>
