@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@using Microsoft.Extensions.Options;
+@using MvcMusicStore.Models;
+
+@inject IOptions<StripeSettings> Stripe
+@inject IOptions<Item> Items
+
+<h3>Your order summary</h3>
+
+<table cellpadding="10" cellspacing="2" border="1">
+    <tr>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Sub Total</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in ViewBag.cart)
+    {
+        <tr>
+            <td>@item.Product.Author</td>
+            <td>@item.Product.Price</td>
+            <td>@item.Quantity</td>
+            <td>@(item.Product.Price * item.Quantity)</td>
+            <td></td>
+        </tr>
+    }
+
+    <tr>
+        <td colspan="4" align="left">Sum</td>
+        <td>@ViewBag.total</td>
+    </tr>
+</table>
+
+<form action="/Cart/Charge" method="POST">
+    <article>
+        <label>Amount Due: $@ViewBag.total</label>
+    </article>
+    <script src="//checkout.stripe.com/v2/checkout.js"
+            class="stripe-button"
+            data-key="@Stripe.Value.PublishableKey"
+            data-locale="auto"
+            data-description="Sample Charge"
+            data-amount=@(@ViewBag.total * 100)></script>
+</form>

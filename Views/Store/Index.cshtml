@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model IEnumerable<PhotoScape.Models.Category>
+@{
+    ViewBag.Title = "Gallery";
+}
+
+<h3>Browse Categories</h3>
+
+<p>
+  To continue to our gallery please select a category below:
+</p>
+<ul>
+    @*@foreach (var category in Model)
+    {
+        <li>@Html.ActionLink(category.Name, "Browse", new { category = category.Name })</li>
+    }*@
+    <li><a asp-area="" asp-controller="Store" asp-action="Abstract">Abstract</a></li>
+    <li><a asp-area="" asp-controller="Store" asp-action="Nature">Nature</a></li>
+    <li><a asp-area="" asp-controller="Store" asp-action="Animals">Animals</a></li>
+</ul>

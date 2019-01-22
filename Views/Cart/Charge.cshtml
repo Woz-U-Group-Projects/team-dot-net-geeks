@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<h3 style="color: green"><i class="fa fa-check"></i> Your payment of $<strong>@ViewBag.total</strong> was successful! Thank you for your purchase!</h3>
+
+<h5 style="margin-top: 25px; margin-bottom: 12px;">Your images are ready for download below.</h5>
+
+@foreach (var item in ViewBag.cart)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <img style="margin-bottom: 8px;" src="~/images/@item.Product.Photo" width="300" height="300" />
+            </div>
+        </div>
+    </div>
+}
